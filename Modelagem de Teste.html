@@ -1,89 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Meu Teste</title>
-  </head>
-  <body>
-		<h1><font color="purple">Exemplo de uma modelagem de testes manual. </br>Contemplando uma pequena história!</font></h1>
-    <h2><font color="blue">Modelo 01 - Levantamento e Análise</font></h2>
-  
-<p><b>Realize uma análise de testabilidade na história a seguir, pontuando se ela possui informações suficientes para elaboração dos Casos de Testes.</br> 
-Caso não possua, descreva como seria a melhor abordagem para levantar esses pontos e quais as informações que faltaram para deixar a história mais completa.</b></p>
 
-<h3>História:</h3>
-<p>Padronização de telefone</p>
+<head>
+	<meta charset="utf-8">
+	<title>Meu Teste</title>
+</head>
 
-<h3>Introdução:</h3>
-<p>Como forma de padronização e centralização de validações de Telefone, a biblioteca foi criada de forma a permitir uma série de validações e boas práticas em torno deles.</p>
+<body>
+	<h1>
+		<font color="purple">Exemplo de uma modelagem de testes manual. </br>Contemplando uma pequena história!</font>
+	</h1>
+	<h2>
+		<font color="blue">Modelo 01 - Levantamento e Análise</font>
+	</h2>
 
-<h3>Formato padrão de telefone:</h3>
-<p>Para utilização dos telefones para envio de SMS, serão considerados apenas números de telefone celular.</br>
-Formados por: DDD com dois dígitos + 9 + número com 8 dígitos, sem espaços nem caracteres especiais (“+”, “-“, etc...). Totalizando 11 dígitos:
-[DDD]9[00000000]</p>
+	<p><b>Realize uma análise de testabilidade na história a seguir, pontuando se ela possui informações suficientes para
+			elaboração dos Casos de Testes.</br>
+			Caso não possua, descreva como seria a melhor abordagem para levantar esses pontos e quais as informações que
+			faltaram para deixar a história mais completa.</b></p>
 
-<h3>Regras de validação:</h3>
-<p>● Remover todos os caracteres especiais do DDD e do telefone;</p>
-<p>● Remover todos os zeros à esquerda do DDD e do telefone;</p>
-<p>● Regras de acordo com a quantidade de caracteres:</p>
-<p>● 10 ou menos dígitos: Número inválido;</p>
-<p>● 11 dígitos: Número composto por 2 dígitos de DDD + 9 + 8 dígitos do telefone:</p>
-<p>● O oitavo dígito (8D) do telefone não pode iniciar com 0;</p>
-<p>● Caso o (9D) não seja o 9, número inválido.</p>
+	<h3>História:</h3>
+	<p>Padronização de telefone</p>
 
-<h3>Serão considerados critérios de aceite:</h3>
-<p>Telefone final obrigatoriamente com 11 dígitos sendo DDD (2D) +Telefone(9D);</p>
-<p>Ausência de DDDs inválidos</p>
+	<h3>Introdução:</h3>
+	<p>Como forma de padronização e centralização de validações de Telefone, a biblioteca foi criada de forma a permitir
+		uma série de validações e boas práticas em torno deles.</p>
 
-<h2><font color="blue">RESPOSTA Modelo 01:</font></h2>
+	<h3>Formato padrão de telefone:</h3>
+	<p>Para utilização dos telefones para envio de SMS, serão considerados apenas números de telefone celular.</br>
+		Formados por: DDD com dois dígitos + 9 + número com 8 dígitos, sem espaços nem caracteres especiais (“+”, “-“,
+		etc...). Totalizando 11 dígitos:
+		[DDD]9[00000000]</p>
 
-<h3>Análise de Testabilidade: História/Funcionalidade	Padronizar formato de telefone.</h3>
-	 
-<h4>Entradas:</h4>
-	<p>Tipo de envio	Envio de SMS</p>
- 	<p>Tipo de telefone	Celular</p>
- 	<p>Formato de Telefone	Sem espaços no Telefone</p>
- 	<p>Sem caracteres especiais do DDD e Telefone</p>
- 	<p>Sem zeros à esquerda do DDD e Telefone</p>
- 	<p>Telefone com 10 dígitos</p>
- 	<p>Telefone com 11 dígitos sendo 2 dígitos do DDD + 9 + 8 dígitos do telefone</p>
- 	<p>O oitavo dígito (8D) não pode iniciar com 0</p>
- 	<p>Se o (9D) não for o 9</p>
+	<h3>Regras de validação:</h3>
+	<p>● Remover todos os caracteres especiais do DDD e do telefone;</p>
+	<p>● Remover todos os zeros à esquerda do DDD e do telefone;</p>
+	<p>● Regras de acordo com a quantidade de caracteres:</p>
+	<p>● 10 ou menos dígitos: Número inválido;</p>
+	<p>● 11 dígitos: Número composto por 2 dígitos de DDD + 9 + 8 dígitos do telefone:</p>
+	<p>● O oitavo dígito (8D) do telefone não pode iniciar com 0;</p>
+	<p>● Caso o (9D) não seja o 9, número inválido.</p>
 
-<h4>Saídas:</h4>	
-	<p>Telefone com 11 dígitos sendo DDD (2D) + Telefone (9D)</p>	 
- 	<p>Ausência de DDDs inválidos</p>
- 	<p>Telefone Inválido</p>	 
+	<h3>Serão considerados critérios de aceite:</h3>
+	<p>Telefone final obrigatoriamente com 11 dígitos sendo DDD (2D) +Telefone(9D);</p>
+	<p>Ausência de DDDs inválidos</p>
 
-<h3>Pontos que, na minha visão, faltaram na história:</h3>
-<p>•	Mencionar as validações dos campos onde é imputado esse número de telefone</p>
-<p>•	Relatar como é extraído essas informações de telefone</p>
-<p>•	Garantir que o número de telefone pertence a determinado usuário</p>
-<p>•	Informar quais seriam os ambientes de testes, exemplo: versão do aparelho de celular, versão do sistema operacional, etc.</p>
+	<h2>
+		<font color="blue">RESPOSTA Modelo 01:</font>
+	</h2>
 
-<h3>Descrição da abordagem que, na minha visão, faltou na história:</h3>
-<p>Faltou uma descrição mais detalhada sobre a Visão do Usuário e Visão de Negócio.</br>
-Na Visão do Usuário, precisa relatar sobre o desejo/necessidade do(a) PO/Squad, em incluir esta história na sprint, detalhando melhor o objetivo da padronização de telefone.</br>
-E na Visão de Negócio, faltou explanar mais sobre as necessidades da padronização de telefone, contemplando possíveis problemas ocorridos, detalhando mais sobre a origem das informações de captura desses telefones.</br>
-E melhor clareza nas descrições das regras de validação, pois os dois pontos abaixo não declaram qual seria ponto de partida para realizar a contagem dos dígitos e realmente identificar qual seria o nono e o oitavo dígito.</p> 
-<p>“O oitavo dígito (8D) do telefone não pode iniciar com 0;”</p>
-<p>“Caso o (9D) não seja o 9, número inválido”</p>
+	<h3>Análise de Testabilidade: História/Funcionalidade Padronizar formato de telefone.</h3>
 
-<h2><font color="green">Modelo 02 - Modelagem de Teste</font></h2>
+	<h4>Entradas:</h4>
+	<p>Tipo de envio Envio de SMS</p>
+	<p>Tipo de telefone Celular</p>
+	<p>Formato de Telefone Sem espaços no Telefone</p>
+	<p>Sem caracteres especiais do DDD e Telefone</p>
+	<p>Sem zeros à esquerda do DDD e Telefone</p>
+	<p>Telefone com 10 dígitos</p>
+	<p>Telefone com 11 dígitos sendo 2 dígitos do DDD + 9 + 8 dígitos do telefone</p>
+	<p>O oitavo dígito (8D) não pode iniciar com 0</p>
+	<p>Se o (9D) não for o 9</p>
 
-<p><b>Escrita de Casos de Testes - Dado a História do Exercício 1, elabore a construção dos cenários de testes contendo os pré-requisitos necessários para a execução.</b></p>
+	<h4>Saídas:</h4>
+	<p>Telefone com 11 dígitos sendo DDD (2D) + Telefone (9D)</p>
+	<p>Ausência de DDDs inválidos</p>
+	<p>Telefone Inválido</p>
 
-<h2><font color="green">RESPOSTA Modelo 02:</font></h2>
+	<h3>Pontos que, na minha visão, faltaram na história:</h3>
+	<p>• Mencionar as validações dos campos onde é imputado esse número de telefone</p>
+	<p>• Relatar como é extraído essas informações de telefone</p>
+	<p>• Garantir que o número de telefone pertence a determinado usuário</p>
+	<p>• Informar quais seriam os ambientes de testes, exemplo: versão do aparelho de celular, versão do sistema
+		operacional, etc.</p>
 
-<table border="1">
-	<tr>
+	<h3>Descrição da abordagem que, na minha visão, faltou na história:</h3>
+	<p>Faltou uma descrição mais detalhada sobre a Visão do Usuário e Visão de Negócio.</br>
+		Na Visão do Usuário, precisa relatar sobre o desejo/necessidade do(a) PO/Squad, em incluir esta história na sprint,
+		detalhando melhor o objetivo da padronização de telefone.</br>
+		E na Visão de Negócio, faltou explanar mais sobre as necessidades da padronização de telefone, contemplando
+		possíveis problemas ocorridos, detalhando mais sobre a origem das informações de captura desses telefones.</br>
+		E melhor clareza nas descrições das regras de validação, pois os dois pontos abaixo não declaram qual seria ponto de
+		partida para realizar a contagem dos dígitos e realmente identificar qual seria o nono e o oitavo dígito.</p>
+	<p>“O oitavo dígito (8D) do telefone não pode iniciar com 0;”</p>
+	<p>“Caso o (9D) não seja o 9, número inválido”</p>
+
+	<h2>
+		<font color="green">Modelo 02 - Modelagem de Teste</font>
+	</h2>
+
+	<p><b>Escrita de Casos de Testes - Dado a História do Exercício 1, elabore a construção dos cenários de testes
+			contendo os pré-requisitos necessários para a execução.</b></p>
+
+	<h2>
+		<font color="green">RESPOSTA Modelo 02:</font>
+	</h2>
+
+	<table border="1">
+		<tr>
 			<td>Caso de Teste</td>
 			<td>NR</td>
 			<td>História/Funcionalidade</td>
 			<td>Nome do Caso de Teste (Cenário)</td>
 			<td>Gherkin</td>
-	</tr>
-	<tr>
+		</tr>
+		<tr>
 			<td>CT</td>
 			<td>001</td>
 			<td>Padronização de telefone</td>
@@ -91,7 +112,8 @@ E melhor clareza nas descrições das regras de validação, pois os dois pontos
 			<td>
 				Dado que preciso enviar um sms</br>
 				E possuo um número de telefone celular para contato</br>
-				Quando informo um número de telefone celular com 11 dígitos sendo 2 dígitos do DDD + 9 + 8 dígitos do telefone</br>
+				Quando informo um número de telefone celular com 11 dígitos sendo 2 dígitos do DDD + 9 + 8 dígitos do
+				telefone</br>
 				E não possui espaços no DDD e Telefone</br>
 				E não possui caracteres especiais no DDD e Telefone</br>
 				E não possui zeros à esquerda no DDD e Telefone</br>
@@ -100,112 +122,113 @@ E melhor clareza nas descrições das regras de validação, pois os dois pontos
 				E os dígitos são apenas números</br>
 				E realizo o envio do sms</br>
 				Então número de telefone é válido</td>
-	</tr>
-	<tr>
-		<td>CT</td>
-		<td>002</td>
-		<td>Padronização de telefone</td>
-		<td>Validar DDD válido e número de telefone celular válido</td>
-		<td>
-			Dado que preciso enviar um sms</br>
-			E possuo um número de telefone celular para contato</br>
-			Quando informo um número de telefone que não possui espaços no DDD e Telefone</br>
-			E não possui caracteres especiais no DDD e Telefone</br>
-			E não possui zeros à esquerda no DDD e Telefone</br>
-			E o oitavo dígito (8D) não inicia com zero</br>
-			E o nono dígito (9D) é igual a 9</br>
-			E os dígitos são apenas números</br>
-			E o total de dígitos são 11</br>
-			E realizo o envio do sms</br>
-			Então número de telefone é válido</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>003</td>
-	<td>Padronização de telefone</td>
-	<td>Validar DDD válido com número de telefone inválido</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo um número de telefone que seja inválido</br>
-		E o número de DDD é válido</br>
-		E realizo o envio do sms</br>
-		Então número completo de DDD + telefone é inválido</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>004</td>
-	<td>Padronização de telefone</td>
-	<td>Validar DDD inválidos com número de telefone válido</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo um número de telefone que contenha zero à esquerda do DDD/ DDD inexistente no Brasil/ DDD com caracter além de número</br>
-		E o número de telefone é válido</br>
-		E realizo o envio do sms</br>
-		Então número completo de DDD + telefone é inválido</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>005</td>
-	<td>Padronização de telefone</td>
-	<td>Validar número de telefone celular que contenha números e outros caracteres</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo o número de celular que contenha caracteres especiais/ espaços/ letras além de números</br>
-		E realizo o envio do sms</br>
-		Então recebo um retorno de telefone inválido.</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>006</td>
-	<td>Padronização de telefone</td>
-	<td>Validar número de telefone celular com 10 dígitos</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo o número de celular com 10 dígitos</br>
-		E realizo o envio do sms</br>
-		Então recebo um retorno de telefone inválido.</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>007</td>
-	<td>Padronização de telefone</td>
-	<td>Validar número de telefone celular com 12 dígitos</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo o número de celular com 12 dígitos</br>
-		E realizo o envio do sms</br>
-		Então recebo um retorno de telefone inválido.</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>008</td>
-	<td>Padronização de telefone</td>
-	<td>Validar o nono dígito do número de telefone celular</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo um número de telefone celular que o nono dígito (9D), é diferente de 9</br>
-		E realizo o envio do sms</br>
-		Então número de telefone é inválido</td>
-</tr>
-<tr>
-	<td>CT</td>
-	<td>009</td>
-	<td>Padronização de telefone</td>
-	<td>Validar o oitavo dígito do número de telefone celular</td>
-	<td>
-		Dado que preciso enviar um sms</br>
-		E possuo um número de telefone celular para contato</br>
-		Quando informo um número de telefone celular que o oitavo dígito (8D), é igual a zero</br>
-		E realizo o envio do sms</br>
-		Então número de telefone é inválido</td>
-</tr>
-</table>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>002</td>
+			<td>Padronização de telefone</td>
+			<td>Validar DDD válido e número de telefone celular válido</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo um número de telefone que não possui espaços no DDD e Telefone</br>
+				E não possui caracteres especiais no DDD e Telefone</br>
+				E não possui zeros à esquerda no DDD e Telefone</br>
+				E o oitavo dígito (8D) não inicia com zero</br>
+				E o nono dígito (9D) é igual a 9</br>
+				E os dígitos são apenas números</br>
+				E o total de dígitos são 11</br>
+				E realizo o envio do sms</br>
+				Então número de telefone é válido</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>003</td>
+			<td>Padronização de telefone</td>
+			<td>Validar DDD válido com número de telefone inválido</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo um número de telefone que seja inválido</br>
+				E o número de DDD é válido</br>
+				E realizo o envio do sms</br>
+				Então número completo de DDD + telefone é inválido</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>004</td>
+			<td>Padronização de telefone</td>
+			<td>Validar DDD inválidos com número de telefone válido</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo um número de telefone que contenha zero à esquerda do DDD/ DDD inexistente no Brasil/ DDD com
+				caracter além de número</br>
+				E o número de telefone é válido</br>
+				E realizo o envio do sms</br>
+				Então número completo de DDD + telefone é inválido</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>005</td>
+			<td>Padronização de telefone</td>
+			<td>Validar número de telefone celular que contenha números e outros caracteres</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo o número de celular que contenha caracteres especiais/ espaços/ letras além de números</br>
+				E realizo o envio do sms</br>
+				Então recebo um retorno de telefone inválido.</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>006</td>
+			<td>Padronização de telefone</td>
+			<td>Validar número de telefone celular com 10 dígitos</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo o número de celular com 10 dígitos</br>
+				E realizo o envio do sms</br>
+				Então recebo um retorno de telefone inválido.</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>007</td>
+			<td>Padronização de telefone</td>
+			<td>Validar número de telefone celular com 12 dígitos</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo o número de celular com 12 dígitos</br>
+				E realizo o envio do sms</br>
+				Então recebo um retorno de telefone inválido.</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>008</td>
+			<td>Padronização de telefone</td>
+			<td>Validar o nono dígito do número de telefone celular</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo um número de telefone celular que o nono dígito (9D), é diferente de 9</br>
+				E realizo o envio do sms</br>
+				Então número de telefone é inválido</td>
+		</tr>
+		<tr>
+			<td>CT</td>
+			<td>009</td>
+			<td>Padronização de telefone</td>
+			<td>Validar o oitavo dígito do número de telefone celular</td>
+			<td>
+				Dado que preciso enviar um sms</br>
+				E possuo um número de telefone celular para contato</br>
+				Quando informo um número de telefone celular que o oitavo dígito (8D), é igual a zero</br>
+				E realizo o envio do sms</br>
+				Então número de telefone é inválido</td>
+		</tr>
+	</table>
 
 </body>
 
